@@ -1,0 +1,35 @@
+.input{
+    border:1px solid #777;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    input{
+        background-color: transparent;
+        border: 0;
+        font-size: 16px;
+        outline: none;
+        padding: 16px 8px;
+        color: #d4d4d4;
+        flex:1
+    }
+    .send-btn{
+        background-color: #777;
+        border: 1px solid #777;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+        cursor: pointer;
+        opacity: .5;
+        img{
+            width: 18px;
+        }
+        &:hover{
+            background-color: transparent;
+            opacity: 0.8;
+        }
+    }
+}

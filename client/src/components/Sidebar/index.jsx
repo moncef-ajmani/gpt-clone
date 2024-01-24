@@ -54,7 +54,7 @@ const index = () => {
             </div>
             <div className='chat__list-title'>Yesturday</div>
             <div className='chat__list-items'>
-            <div className='list__item'>
+                <div className='list__item'>
                     <div className='list__item-text'>Corrigez diapositive floue.</div>
                     <div className='list__item-options'>
                         <div className='option-more'>
@@ -65,6 +65,179 @@ const index = () => {
                         </div>
                     </div>
                 </div>
+                <div className='list__item'>
+                    <div className='list__item-text'>Corrigez diapositive floue.</div>
+                    <div className='list__item-options'>
+                        <div className='option-more'>
+                            <img src={option_icon} className='option-img'/>
+                        </div>
+                        <div className='option-archive'>
+                            <img src={archive_icon} className='option-img'/>
+                        </div>
+                    </div>
+                </div>
+                <div className='list__item'>
+                    <div className='list__item-text'>Corrigez diapositive floue.</div>
+                    <div className='list__item-options'>
+                        <div className='option-more'>
+                            <img src={option_icon} className='option-img'/>
+                        </div>
+                        <div className='option-archive'>
+                            <img src={archive_icon} className='option-img'/>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div className='chat__list'>
+            <div className='chat__list-title'>Today</div>
+            <div className='chat__list-items'>
+                <div className='list__item'>
+                    <div className='list__item-text'>Corrigez diapositive floue.</div>
+                    <div className='list__item-options'>
+                        <div className='option-more'>
+                            <img src={option_icon} className='option-img'/>
+                        </div>
+                        <div className='option-archive'>
+                            <img src={archive_icon} className='option-img'/>
+                        </div>
+                    </div>
+                </div>
+                <div className='list__item'>
+                    <div className='list__item-text'>Corrigez diapositive floue.</div>
+                    <div className='list__item-options'>
+                        <div className='option-more'>
+                            <img src={option_icon} className='option-img'/>
+                        </div>
+                        <div className='option-archive'>
+                            <img src={archive_icon} className='option-img'/>
+                        </div>
+                    </div>
+                </div>
+                <div className='list__item'>
+                    <div className='list__item-text'>Corrigez diapositive floue.</div>
+                    <div className='list__item-options'>
+                        <div className='option-more'>
+                            <img src={option_icon} className='option-img'/>
+                        </div>
+                        <div className='option-archive'>
+                            <img src={archive_icon} className='option-img'/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className='chat__list-title'>Yesturday</div>
+            <div className='chat__list-items'>
+                <div className='list__item'>
+                    <div className='list__item-text'>Corrigez diapositive floue.</div>
+                    <div className='list__item-options'>
+                        <div className='option-more'>
+                            <img src={option_icon} className='option-img'/>
+                        </div>
+                        <div className='option-archive'>
+                            <img src={archive_icon} className='option-img'/>
+                        </div>
+                    </div>
+                </div>
+                <div className='list__item'>
+                    <div className='list__item-text'>Corrigez diapositive floue.</div>
+                    <div className='list__item-options'>
+                        <div className='option-more'>
+                            <img src={option_icon} className='option-img'/>
+                        </div>
+                        <div className='option-archive'>
+                            <img src={archive_icon} className='option-img'/>
+                        </div>
+                    </div>
+                </div>
+                <div className='list__item'>
+                    <div className='list__item-text'>Corrigez diapositive floue.</div>
+                    <div className='list__item-options'>
+                        <div className='option-more'>
+                            <img src={option_icon} className='option-img'/>
+                        </div>
+                        <div className='option-archive'>
+                            <img src={archive_icon} className='option-img'/>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div className='chat__list'>
+            <div className='chat__list-title'>Today</div>
+            <div className='chat__list-items'>
+                <div className='list__item'>
+                    <div className='list__item-text'>Corrigez diapositive floue.</div>
+                    <div className='list__item-options'>
+                        <div className='option-more'>
+                            <img src={option_icon} className='option-img'/>
+                        </div>
+                        <div className='option-archive'>
+                            <img src={archive_icon} className='option-img'/>
+                        </div>
+                    </div>
+                </div>
+                <div className='list__item'>
+                    <div className='list__item-text'>Corrigez diapositive floue.</div>
+                    <div className='list__item-options'>
+                        <div className='option-more'>
+                            <img src={option_icon} className='option-img'/>
+                        </div>
+                        <div className='option-archive'>
+                            <img src={archive_icon} className='option-img'/>
+                        </div>
+                    </div>
+                </div>
+                <div className='list__item'>
+                    <div className='list__item-text'>Corrigez diapositive floue.</div>
+                    <div className='list__item-options'>
+                        <div className='option-more'>
+                            <img src={option_icon} className='option-img'/>
+                        </div>
+                        <div className='option-archive'>
+                            <img src={archive_icon} className='option-img'/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className='chat__list-title'>Yesturday</div>
+            <div className='chat__list-items'>
+                <div className='list__item'>
+                    <div className='list__item-text'>Corrigez diapositive floue.</div>
+                    <div className='list__item-options'>
+                        <div className='option-more'>
+                            <img src={option_icon} className='option-img'/>
+                        </div>
+                        <div className='option-archive'>
+                            <img src={archive_icon} className='option-img'/>
+                        </div>
+                    </div>
+                </div>
+                <div className='list__item'>
+                    <div className='list__item-text'>Corrigez diapositive floue.</div>
+                    <div className='list__item-options'>
+                        <div className='option-more'>
+                            <img src={option_icon} className='option-img'/>
+                        </div>
+                        <div className='option-archive'>
+                            <img src={archive_icon} className='option-img'/>
+                        </div>
+                    </div>
+                </div>
+                <div className='list__item'>
+                    <div className='list__item-text'>Corrigez diapositive floue.</div>
+                    <div className='list__item-options'>
+                        <div className='option-more'>
+                            <img src={option_icon} className='option-img'/>
+                        </div>
+                        <div className='option-archive'>
+                            <img src={archive_icon} className='option-img'/>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
     </div>

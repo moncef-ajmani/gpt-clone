@@ -5,7 +5,7 @@ const index = () => {
   return (
     <div className='header'>
         <div className='header__version'>
-            <h1>ChatGPT <span>1.0</span></h1>
+            <h1>ChatGPT <span>0.0</span></h1>
         </div>
         <div className='header__share'>
             <img src={upload_icon}/>

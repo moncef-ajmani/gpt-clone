@@ -1,14 +1,16 @@
 .header{
-    width: 100%;
+    position: fixed;
+    width: calc(100% - 260px);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 16px;
+    height: 48px;
+    padding: 0 16px;
+    background-color: #40414f;
     &__version{
         h1{
             font-size: 20px;
             letter-spacing: -1px;
-            color: #fff;
             span{
                 color: #d4d4d4;
                 font-size: 20px;
@@ -23,9 +25,14 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
         img{
             width: 18px;
             height: 18px;
+        }
+        &:hover{
+            background-color: #40414f;
+            opacity: 0.5;
         }
     }
 }
