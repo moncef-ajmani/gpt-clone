@@ -4,6 +4,7 @@
     padding: 12px 14px;
     height: 100vh;
     overflow-y: scroll;
+    position: fixed;
     &__new{
         display: flex;
         align-items: center;
