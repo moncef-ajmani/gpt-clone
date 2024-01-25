@@ -7,14 +7,17 @@ import com.gptclone.bakend.enums.Role;
 import com.gptclone.bakend.model.User;
 import com.gptclone.bakend.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -25,24 +28,29 @@ public class AuthenticationService {
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
 
-    public AuthenticationResponseDTO register(RegisterRequestDTO request){
-
+    public ResponseEntity<Object> register(RegisterRequestDTO request){
+        Optional<User> existingUser = userRepository.findByEmail(request.getEmail());
+        if(existingUser.isPresent()){
+            return ResponseEntity.badRequest().body("User Already Exist");
+        }
         var user = User
                 .builder()
                 .username(request.getUsername())
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .role(Role.USER)
+                .conversations(new ArrayList<>())
                 .build();
         userRepository.save(user);
         Map<String,Object> claims = new HashMap<>();
         claims.put("username",request.getUsername());
         var jwtToken = jwtService.generateToken(claims,user);
 
-        return AuthenticationResponseDTO
+        return ResponseEntity.ok(AuthenticationResponseDTO
                 .builder()
                 .token(jwtToken)
-                .build();
+                .build());
+
     }
 
     public AuthenticationResponseDTO login(LoginRequestDTO request){

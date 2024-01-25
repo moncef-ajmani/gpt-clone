@@ -8,11 +8,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 
-@Document("user")
+@Document("users")
 @Data
 @ToString
 @AllArgsConstructor @NoArgsConstructor
@@ -25,6 +27,7 @@ public class User implements UserDetails {
     private String email;
     private String password;
     private Role role;
+    private List<Conversation> conversations;
 
     public String getName(){
         return this.username;
