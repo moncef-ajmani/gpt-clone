@@ -1,4 +1,4 @@
-package com.gptclone.bakend.model;
+package com.gptclone.bakend.entity;
 
 import com.gptclone.bakend.enums.Role;
 import lombok.*;
@@ -9,7 +9,6 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -27,7 +26,7 @@ public class User implements UserDetails {
     private String email;
     private String password;
     private Role role;
-    private List<Conversation> conversations;
+    private History history;
 
     public String getName(){
         return this.username;

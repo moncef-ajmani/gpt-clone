@@ -3,8 +3,10 @@ package com.gptclone.bakend.service;
 import com.gptclone.bakend.DTOs.AuthenticationResponseDTO;
 import com.gptclone.bakend.DTOs.LoginRequestDTO;
 import com.gptclone.bakend.DTOs.RegisterRequestDTO;
+import com.gptclone.bakend.entity.History;
 import com.gptclone.bakend.enums.Role;
-import com.gptclone.bakend.model.User;
+import com.gptclone.bakend.entity.User;
+import com.gptclone.bakend.repository.HistoryRepository;
 import com.gptclone.bakend.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -27,6 +29,7 @@ public class AuthenticationService {
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
+    private final HistoryRepository historyRepository;
 
     public ResponseEntity<Object> register(RegisterRequestDTO request){
         Optional<User> existingUser = userRepository.findByEmail(request.getEmail());
@@ -39,12 +42,13 @@ public class AuthenticationService {
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .role(Role.USER)
-                .conversations(new ArrayList<>())
                 .build();
-        userRepository.save(user);
+        User savedUser = userRepository.save(user);
         Map<String,Object> claims = new HashMap<>();
         claims.put("username",request.getUsername());
         var jwtToken = jwtService.generateToken(claims,user);
+
+        historyRepository.save(new History(null,savedUser.getId(),new ArrayList<>()));
 
         return ResponseEntity.ok(AuthenticationResponseDTO
                 .builder()

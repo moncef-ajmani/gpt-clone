@@ -1,6 +1,6 @@
 package com.gptclone.bakend.controller;
 
-import com.gptclone.bakend.model.Conversation;
+import com.gptclone.bakend.entity.Conversation;
 import com.gptclone.bakend.model.Message;
 import com.gptclone.bakend.service.ConversationService;
 import lombok.RequiredArgsConstructor;
@@ -13,13 +13,11 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ConversationController {
     private final ConversationService conversationService;
+    @PostMapping
+    public Message sendFisrtMessage(@RequestBody String content){
 
-    @PostMapping("/")
-    public Conversation createConversation(@RequestParam String userId){
-        System.out.println(userId);
-        return conversationService.createConversation(userId);
+        return conversationService.sendFirstMessage(content);
     }
-
     @GetMapping("/{conversationId}")
     public List<Message> getMessagesByConversationId(@PathVariable String conversationId) {
         return conversationService.getMessagesByConversationId(conversationId);
@@ -27,6 +25,10 @@ public class ConversationController {
 
     @PostMapping("/{conversationId}")
     public Message sendMessage(@PathVariable String conversationId,@RequestBody String content){
+   
         return conversationService.sendMessage(conversationId,content);
     }
+
+
+
 }

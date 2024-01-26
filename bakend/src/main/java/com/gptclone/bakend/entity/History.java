@@ -1,10 +1,12 @@
-package com.gptclone.bakend.model;
+package com.gptclone.bakend.entity;
 
+import com.gptclone.bakend.model.HistoryItem;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
@@ -12,11 +14,13 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Document("histories")
 @Builder
-@Document("conversations")
-public class Conversation {
+public class History {
     @Id
     private String id;
-    private String title;
-    private List<Message> messages;
+    @Indexed(unique = true)
+    private String userId;
+    private List<HistoryItem> historyItems;
+
 }
