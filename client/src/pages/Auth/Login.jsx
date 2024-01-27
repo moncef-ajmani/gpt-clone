@@ -1,7 +1,10 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
 import {Link} from 'react-router-dom'
+import { useAuth } from '../../Contexts/AuthContext'
+import axios from '../../api/axios'
 
 const Login = () => {
+  const { login } = useAuth()
   const emailRef = useRef()
   const passRef = useRef()
 
@@ -9,8 +12,17 @@ const Login = () => {
     emailRef.current.focus()
   },[])
 
-  const handleSubmit = () =>{
-    
+  const handleSubmit = (e) =>{
+    e.preventDefault()
+    axios.post("/auth/login",{
+      "email":emailRef.current.value,
+      "password":passRef.current.value
+    })
+    .then(({data})=>{
+        console.log(data)
+        login(data.token)
+    })
+    .catch(err=>console.log(err))
   }
   return (
 

@@ -15,6 +15,7 @@ import org.springframework.web.client.RestTemplate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -36,7 +37,11 @@ public class ConversationService {
     }
 
     public List<Message> getMessagesByConversationId(String conversationId){
-        return conversationRepository.findById(conversationId).get().getMessages();
+        Optional<Conversation> conversation =  conversationRepository.findById(conversationId);
+        if (conversation.isPresent()){
+            return conversation.get().getMessages();
+        }
+        return new ArrayList<>();
     }
 
     public Message sendFirstMessage(String content){

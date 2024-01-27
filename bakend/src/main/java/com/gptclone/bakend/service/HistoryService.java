@@ -6,6 +6,9 @@ import com.gptclone.bakend.repository.HistoryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class HistoryService {

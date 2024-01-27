@@ -6,14 +6,20 @@ import Home from '../pages/Home'
 import Auth from '../pages/Auth'
 import Login from '../pages/Auth/Login'
 import Register from '../pages/Auth/Register'
+import NewChat from '../pages/Home/NewChat'
+import Conversation from '../pages/Home/Conversation'
 
 
 const Router = () => {
     const router = createBrowserRouter(
         createRoutesFromElements(
           <Route path="/">
-            <Route element={<PrivateRoutes/>}>
-              <Route index element={<Home/>}/>
+            <Route element={<Home/>}>
+              <Route element={<PrivateRoutes/>}>
+                <Route index element={<NewChat/>}/>
+                <Route path='/c/:id' element={<Conversation/>} />
+              </Route>
+              
             </Route>
     
             <Route path="/auth" element={<Auth />}>

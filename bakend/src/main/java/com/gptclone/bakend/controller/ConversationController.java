@@ -11,6 +11,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/conversations")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "http://localhost:5173/")
+
 public class ConversationController {
     private final ConversationService conversationService;
     @PostMapping
@@ -25,7 +27,7 @@ public class ConversationController {
 
     @PostMapping("/{conversationId}")
     public Message sendMessage(@PathVariable String conversationId,@RequestBody String content){
-   
+
         return conversationService.sendMessage(conversationId,content);
     }
 

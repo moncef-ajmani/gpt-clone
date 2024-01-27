@@ -10,8 +10,7 @@ const index = () => {
         <div className='header__share'>
             <img src={upload_icon}/>
         </div>
-    </div>
+    </div>  
   )
 }
-
 export default index

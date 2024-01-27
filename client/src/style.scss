@@ -19,13 +19,14 @@ body{
     position: relative;
 }
 .appContainer{
-    width:768px;
+    width:700px;
     margin: 0 auto;
     margin-top: 48px;
 }
 .content{
     flex: 1;
     padding-top: 24px;
+    position: relative
 }
 
 .footer{
@@ -39,4 +40,29 @@ body{
         width:800px;
         margin: 0 auto;
     }
+}
+
+/* width */
+::-webkit-scrollbar {
+    height: 1rem;
+    width: 0.5rem;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+}
+  
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: hsla(0,0%,100%,.1);
+    border-color: rgba(255,255,255,var(--tw-border-opacity));
+
+}
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
