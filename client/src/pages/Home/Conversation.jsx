@@ -13,12 +13,22 @@ const Conversation = () => {
         axios.get(`conversations/${id}`)
         .then(({data})=>{
             setMessages(data)
-            console.log(data)
         })
         .catch(err=>{
             console.log(err)
         })
-    },[id])
+    },[id,messages])
+    const sendMessage = (content) =>{
+        axios.post("/conversations/"+id,content,{
+          headers: {
+            'Content-Type': 'text/plain',
+          }}
+        )
+        .then(({data})=>{
+          setMessages([...messages,content,data.message.content])
+        })
+        .catch(err=>console.log(err))
+      }
     return (
     <>
         <div className='appContainer'>
@@ -29,7 +39,7 @@ const Conversation = () => {
         </div>
         <div className="footer">
         <div className='container'>
-            <Input/>
+            <Input sendMessage={sendMessage}/>
             <Signature/>
         </div>
         </div>

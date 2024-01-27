@@ -1,14 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './style.scss'
 import btn_play from '../../assets/button-play.png';
 import { Navigate, Outlet } from 'react-router-dom';
+import { useAuth } from '../../Contexts/AuthContext'
 
 export default function index({children}) {
-  let auth = {'token':false}
   return (
     <>
-      {auth.token ?<Navigate to="/"/>:(
-        <div className='auth'>
+      <div className='auth'>
         <div className='col-7'>
           <div className='auth__hero'>
             <div className='auth__hero-logo'>Devcef</div>
@@ -23,9 +22,7 @@ export default function index({children}) {
           {children}
           <Outlet/>
         </div>
-      </div> 
-      )}
-      
+      </div>
     </>
     
   )

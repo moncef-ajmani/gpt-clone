@@ -2,6 +2,7 @@ package com.gptclone.bakend.service;
 
 import com.gptclone.bakend.DTOs.ChatGPTRequest;
 import com.gptclone.bakend.DTOs.ChatGPTResponse;
+import com.gptclone.bakend.DTOs.FirstMessageRequestDTO;
 import com.gptclone.bakend.entity.Conversation;
 import com.gptclone.bakend.entity.History;
 import com.gptclone.bakend.model.*;
@@ -44,7 +45,7 @@ public class ConversationService {
         return new ArrayList<>();
     }
 
-    public Message sendFirstMessage(String content){
+    public FirstMessageRequestDTO sendFirstMessage(String content){
 
         History history = historyService.getHistory();
 
@@ -60,7 +61,10 @@ public class ConversationService {
         history.getHistoryItems().add(historyItem);
         historyRepository.save(history);
 
-        return message;
+        return FirstMessageRequestDTO.builder()
+                .message(message)
+                .conversationId(conversation.getId())
+                .build();
     }
     public String getConversationTitle(String content){
         List<ChatMessage> chatMessageList = new ArrayList<>();
@@ -74,6 +78,7 @@ public class ConversationService {
         return chatGPTResponse.getChoices().get(0).getMessage().getContent();
     }
     public Message sendMessage(String conversationId, String content){
+
         Message userMessage = Message.builder()
                 .content(content)
                 .role("user")
@@ -92,6 +97,8 @@ public class ConversationService {
 
         conversation.getMessages().add(userMessage);
         conversation.getMessages().add(systemMessage);
+
+        System.out.println(conversation.getMessages());
 
         conversationRepository.save(conversation);
 

@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Sidebar from '../../components/Sidebar'
 import Header from '../../components/Header'
-import { Outlet } from 'react-router-dom'
+import { Outlet,Navigate } from 'react-router-dom'
+
+import { useAuth } from '../../Contexts/AuthContext'
 
 export default function(){
   return (

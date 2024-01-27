@@ -1,5 +1,6 @@
 package com.gptclone.bakend.controller;
 
+import com.gptclone.bakend.DTOs.FirstMessageRequestDTO;
 import com.gptclone.bakend.entity.Conversation;
 import com.gptclone.bakend.model.Message;
 import com.gptclone.bakend.service.ConversationService;
@@ -16,7 +17,7 @@ import java.util.List;
 public class ConversationController {
     private final ConversationService conversationService;
     @PostMapping
-    public Message sendFisrtMessage(@RequestBody String content){
+    public FirstMessageRequestDTO sendFisrtMessage(@RequestBody String content){
 
         return conversationService.sendFirstMessage(content);
     }

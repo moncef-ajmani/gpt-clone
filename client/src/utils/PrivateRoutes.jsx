@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Navigate, Outlet } from 'react-router-dom'
+import { useAuth } from '../Contexts/AuthContext'
 
 const PrivateRoutes = () => {
-  const storedUser = localStorage.getItem('authUser');
+  const { isLoggedIn } = useAuth()
   return (
-    <>
-      {storedUser ? <Outlet/> : <Navigate to="/auth/login" />}
-    </>
+    isLoggedIn  
+    ? <Outlet/>
+    : <Navigate to="/auth/login"/>
   )
 }
 
