@@ -1,0 +1,34 @@
+version: '3'
+services:
+  frontend:
+    build:
+      context: ./client
+    environment:
+      - TOKEN=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
+
+    ports:
+      - "4173:4173"
+    depends_on:
+      - backend
+    networks:
+      - my-net
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongodb
+    networks:
+      - my-net
+  mongodb:
+    image: mongo
+    environment:
+      MONGO_INITDB_DATABASE: gpt_clone
+    ports:
+      - "27017:27017"
+    networks:
+      - my-net
+networks:
+  my-net:
+    driver: bridge
