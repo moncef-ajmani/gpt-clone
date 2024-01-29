@@ -57,5 +57,10 @@ The backend will be accessible at http://localhost:8080, and the frontend at htt
 
 Open the frontend in your web browser, create an account or log in, and start enjoying the ChatGPT clone with secured authentication and interactive chat history.
 
+## Screenshots
+
+### Register Page
+![Register Page](https://cdn.discordapp.com/attachments/881903437246246986/1201579625076228096/image.png?ex=65ca553a&is=65b7e03a&hm=5752e2d7c7646b488452d3363b2c2b65c814c84e41a69fb95ef7bf20816aa840&)
+
 
 
