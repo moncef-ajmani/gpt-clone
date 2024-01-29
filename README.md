@@ -51,7 +51,7 @@ docker-compose up
 
 ### 5. Access the Application
 
-The backend will be accessible at http://localhost:8080, and the frontend at http://localhost::4173.
+The backend will be accessible at http://localhost:8080, and the frontend at http://localhost:4173.
 
 ### 6. Enjoy Chatting
 
