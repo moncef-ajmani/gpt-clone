@@ -16,12 +16,14 @@ const Router = () => {
     const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/">
-        <Route path="/" element={<Home />}>
-          <Route index element={<NewChat />} />
-          <Route path="/c/:id" element={<Conversation />} />  
+        <Route path="/" element={<Home />} exact>
+          <Route element={<PrivateRoutes/>}>
+            <Route index element={<NewChat />} />
+
+            <Route path="/c/:id" element={<Conversation />} />  
+          </Route>
         </Route>
         <Route path="/auth" element={<Auth />}>
-          
           <Route index path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
         </Route>

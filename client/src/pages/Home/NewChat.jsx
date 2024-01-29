@@ -14,7 +14,6 @@ const NewChat = () => {
       }}
     )
     .then(({data})=>{
-      console.log(data)
       setConversationId(data.conversationId)
     })
     .catch(err=>console.log(err))
@@ -22,7 +21,7 @@ const NewChat = () => {
   return (
     <>
       {conversationId && (
-          <Navigate to={`/c/${conversationId}`} />
+          window.location.href = `/c/${conversationId}`
         )}
         <div className='appContainer'>
             <div className='content'>

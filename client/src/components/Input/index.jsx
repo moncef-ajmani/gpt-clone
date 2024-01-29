@@ -4,17 +4,26 @@ import up_arrow from '../../assets/up-arrow.png'
 
 const index = ({sendMessage,setInput}) => {
   const inputRef = useRef()
-  const handleClick = () =>{
-    console.log(inputRef.current.value)
+
+  const handleClick = (e) =>{
+    e.preventDefault()
     sendMessage(inputRef.current.value)
+    inputRef.current.value = ""
+    window.scrollTo({
+      top:window.scrollHeight,
+      behavior:'smooth'
+    })
   }
   return (
-    <div className='input'>
+    <form onSubmit={handleClick}>
+      <div className='input'>
         <input type='text' placeholder='Message ChatGPT...' ref={inputRef}/>
         <div className='send-btn' onClick={handleClick}>
           <img src={up_arrow}/>
         </div>
-    </div>
+      </div>
+    </form>
+    
   )
 }
 

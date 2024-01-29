@@ -12,12 +12,12 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/conversations")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:5173/")
+@CrossOrigin(origins = "*")
 
 public class ConversationController {
     private final ConversationService conversationService;
     @PostMapping
-    public FirstMessageRequestDTO sendFisrtMessage(@RequestBody String content){
+    public FirstMessageRequestDTO sendFirstMessage(@RequestBody String content){
 
         return conversationService.sendFirstMessage(content);
     }

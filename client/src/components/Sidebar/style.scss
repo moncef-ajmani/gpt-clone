@@ -1,11 +1,15 @@
 .sidebar{
     background-color: #000;
     width: 260px;
-    padding: 12px 14px;
+    padding: 16px 0px 16px 8px;
     height: 100vh;
     overflow-y: scroll;
     position: fixed;
-    &__new{
+    &__container{
+        position: relative;
+        height: 100%;
+    }
+    &__new,&__user{
         display: flex;
         align-items: center;
         height: 45px;
@@ -30,8 +34,8 @@
         &-icon{
             margin-left: auto;
             img{
-                width: 16px;
-                height: 16px;
+                width: 18px;
+                height: 18px;
             }   
         }
         &:hover{
@@ -96,9 +100,37 @@
                 
             }
         }
-
-
     }
+
+    &__user{
+        position: absolute;
+        bottom: 0;
+        margin: 0;
+        padding: 12px;
+        width: 100%;
+        &-avatar{
+            width: 28px;
+            height: 28px;
+            background-color: #fff;
+            border-radius: 50%;
+        }
+        &-name{
+            font-weight: 600;
+            font-size: 14px;
+            margin-left: 8px;
+        }
+        &-logout{
+            margin-left: auto;
+            img{
+                width: 18px;
+            }
+            &:hover{
+                transform: scale(1.2);
+                opacity: .5;
+            }
+        }
+    }
+
     &::-webkit-scrollbar {
         width: 8px;
         // margin-right: 4px;

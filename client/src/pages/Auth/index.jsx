@@ -4,7 +4,7 @@ import btn_play from '../../assets/button-play.png';
 import { Navigate, Outlet } from 'react-router-dom';
 import { useAuth } from '../../Contexts/AuthContext'
 
-export default function index({children}) {
+export default function index() {
   return (
     <>
       <div className='auth'>
@@ -19,7 +19,6 @@ export default function index({children}) {
             </div>
         </div>
         <div className='col-5'>
-          {children}
           <Outlet/>
         </div>
       </div>

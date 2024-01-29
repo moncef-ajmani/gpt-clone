@@ -7,15 +7,15 @@
     height: 4rem;
     padding: 0 16px;
     background-color: #343541;
-    
+    z-index: 999;
     &__version{
         h1{
             font-size: 20px;
             letter-spacing: 1px;
-            font-weight: 500;
+            font-weight: 600;
             margin: 0;
             span{
-                color: #d4d4d4;
+                color: #aaa;
                 font-size: 20px;
             }
         }

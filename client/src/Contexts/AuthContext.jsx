@@ -1,7 +1,6 @@
 
 import React, { createContext, useState, useContext,useEffect } from 'react';
 import { jwtDecode } from "jwt-decode";
-import { Navigate } from 'react-router';
 
 const AuthContext = createContext();
 
@@ -19,13 +18,14 @@ export const AuthProvider = ({ children }) => {
         "token":token
     }
     localStorage.setItem("authUser",JSON.stringify(authUser))
-    window.location.href = "http://localhost:5173/";
+    window.location.href = "/";
   };
 
   const logout = () => {
     localStorage.removeItem("authUser")
-    window.location.href = "http://localhost:5173/";
+    window.location.href = "/";
   };
+
   useEffect(()=>{
     const storedAuthUser = localStorage.getItem('authUser');
     if (storedAuthUser) {
@@ -35,7 +35,7 @@ export const AuthProvider = ({ children }) => {
   },[])
   return (
     <>
-      <AuthContext.Provider value={{ isLoggedIn, login, logout }}>
+      <AuthContext.Provider value={{ isLoggedIn, login, logout, authUser }}>
         {children}
       </AuthContext.Provider>
     </>
