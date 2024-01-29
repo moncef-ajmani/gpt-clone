@@ -4,6 +4,10 @@
 
 This project is a ChatGPT clone that features a Spring Boot backend and a React.js frontend. The application provides secured authentication using JWT (JSON Web Token) and includes a chat conversation powered by ChatGPT. The conversation history is stored in MongoDB, ensuring a seamless and interactive chatting experience.
 
+## Architecture
+
+![Architecture](https://cdn.discordapp.com/attachments/881903437246246986/1201593506901270539/arch.drawio_3.png?ex=65ca6228&is=65b7ed28&hm=b93974eabc3b1fc78913ddbe08ca6505ec6e7167dfa859921cb88d87527b4aa1&)
+
 ### Key Functionalities
 
 1. **Secured Authentication (JWT):** The application ensures secure user authentication using JSON Web Tokens (JWT). Users can create accounts, log in securely, and access personalized chat features.
@@ -12,9 +16,7 @@ This project is a ChatGPT clone that features a Spring Boot backend and a React.
 
    - **Interactive Responses:** ChatGPT provides interactive and context-aware responses, making the chat experience more natural.
    - **Conversation History:** The application stores and displays the conversation history, allowing users to review past interactions.
-### Architecture
 
-![Architecture](https://cdn.discordapp.com/attachments/881903437246246986/1201593506901270539/arch.drawio_3.png?ex=65ca6228&is=65b7ed28&hm=b93974eabc3b1fc78913ddbe08ca6505ec6e7167dfa859921cb88d87527b4aa1&)
 
 ## How to Run
 
