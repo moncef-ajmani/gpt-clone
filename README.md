@@ -62,5 +62,15 @@ Open the frontend in your web browser, create an account or log in, and start en
 ### Register Page
 ![Register Page](https://cdn.discordapp.com/attachments/881903437246246986/1201579625076228096/image.png?ex=65ca553a&is=65b7e03a&hm=5752e2d7c7646b488452d3363b2c2b65c814c84e41a69fb95ef7bf20816aa840&)
 
+### Login Page
+![Login Page](https://cdn.discordapp.com/attachments/881903437246246986/1201580844683378758/image.png?ex=65ca565d&is=65b7e15d&hm=32e40dd503b403d960e827eff5fe5980ab250cbc41ecab32f4fc234bd8d1ab2d&)
+
+### Home Page
+![Home Page](https://cdn.discordapp.com/attachments/881903437246246986/1201579878257012746/image.png?ex=65ca5577&is=65b7e077&hm=b89e77c7a67fdf55038cedf29b5302c747658d4c28e1757af525b2792fc38836&)
+
+### Single Conversation Page
+![Single Conversation](https://cdn.discordapp.com/attachments/881903437246246986/1201579796925259949/image.png?ex=65ca5563&is=65b7e063&hm=daee60a8ca9ec50b3e6f5233367c061245be16cdb19388a1a48fe477bbf7a1bf&)
+
+
 
 
