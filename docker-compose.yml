@@ -3,9 +3,6 @@ services:
   frontend:
     build:
       context: ./client
-    environment:
-      - TOKEN=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
-
     ports:
       - "4173:4173"
     depends_on:
