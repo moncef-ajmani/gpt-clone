@@ -25,7 +25,7 @@ Follow these simple steps to set up and run the ChatGPT clone on your local mach
 ### 1. Clone the Project
 
 ```
-git clone https://github.com/your-username/chatgpt-clone.git
+git clone https://github.com/moncef-ajmani/gpt-clone
 ```
 
 ### 2. Change Application Properties
