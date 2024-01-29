@@ -15,6 +15,7 @@ const index = () => {
         .then(({data})=>{
             setHistory(data.historyItems)
         })
+        .catch(err=>alert("Error fetching history"))
     },[])
     const handleClick = () =>{
         logout()
@@ -30,7 +31,8 @@ const index = () => {
                     <img src={edit_icon} />
                 </div>
             </Link>
-            <div className='chat__list'>
+           
+                <div className='chat__list'>
                 <div className='chat__list-title'>Chat List ({history.length})</div>
                 <div className='chat__list-items'>
                     {history.map(({conversationId,title},index)=>{
@@ -50,7 +52,9 @@ const index = () => {
                     })}
                 </div>
             </div>
-            <div className='sidebar__user'>
+           
+            
+            <div  className='sidebar__user'>
                 <div className="sidebar__user-avatar"></div>
                 <div className="sidebar__user-name">{authUser.username}</div>
                 <div className="sidebar__user-logout" onClick={handleClick}>

@@ -23,10 +23,10 @@ const Router = () => {
             <Route path="/c/:id" element={<Conversation />} />  
           </Route>
         </Route>
-        <Route path="/auth" element={<Auth />}>
-          <Route index path="login" element={<Login />} />
-          <Route path="register" element={<Register />} />
-        </Route>
+        {/* <Route path="/auth" element={<Auth />}> */}
+          <Route  path="/auth/login" element={<Auth><Login /></Auth>} />
+          <Route path="/auth/register" element={<Auth><Register /></Auth>} />
+        {/* </Route> */}
           
         <Route path="*" element={<ErrorMessage code="404" message="This page could not be found."/>} />
       </Route>

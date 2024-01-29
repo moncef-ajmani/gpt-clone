@@ -9,7 +9,7 @@
         position: relative;
         height: 100%;
     }
-    &__new,&__user{
+    &__new{
         display: flex;
         align-items: center;
         height: 45px;
@@ -43,6 +43,7 @@
         }
     }
     .chat__list{
+        padding-bottom: 40px;
         &-title{
             color: rgb(102,102,102);
             font-weight: 600;
@@ -103,11 +104,18 @@
     }
 
     &__user{
-        position: absolute;
+        position: fixed;
         bottom: 0;
+        z-index: 999;
         margin: 0;
         padding: 12px;
-        width: 100%;
+        width: 252px;
+        height: 50px;
+        display: flex;
+        background-color: #000;
+        &:hover{
+            background-color: #555;
+        }
         &-avatar{
             width: 28px;
             height: 28px;
@@ -121,6 +129,7 @@
         }
         &-logout{
             margin-left: auto;
+            cursor: pointer;
             img{
                 width: 18px;
             }

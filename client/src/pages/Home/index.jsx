@@ -10,12 +10,20 @@ export default function(){
  
   return (
     <>
-      <Sidebar/>
-      <div className='main'>
-        <Header/>
-        <Outlet/>
-        <div id='bottom'></div>
-      </div>
+      {localStorage.getItem("authUser")
+      ?(
+        <>
+        <Sidebar/>
+        <div className='main'>
+          <Header/>
+          {/* {children} */}
+          <Outlet/>
+          <div id='bottom'></div>
+        </div>
+        </>
+      )
+      :<Navigate to="/auth/login"/>}
+      
     </>
   )
 }

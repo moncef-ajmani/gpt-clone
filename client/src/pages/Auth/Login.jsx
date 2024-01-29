@@ -22,7 +22,7 @@ const Login = () => {
         console.log(data)
         login(data.token)
     })
-    .catch(err=>console.log(err))
+    .catch(err=>alert("invalid credentials"))
   }
   return (
 
